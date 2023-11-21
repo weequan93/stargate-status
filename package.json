@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@layerzerolabs/scan-client": "^0.0.6",
+    "@layerzerolabs/scan-client": "^0.0.7",
+    "axios": "^1.6.2",
     "express": "^4.18.2"
   }
 }
