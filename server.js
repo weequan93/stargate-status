@@ -1,5 +1,5 @@
 
-const { createClient } = require('@layerzerolabs/scan-client')
+const { createClient, getMessagesBySrcTxHash } = require('@layerzerolabs/scan-client')
 
 const express = require('express')
 const app = express()
@@ -15,7 +15,8 @@ app.get('/api/v1/fromSource',  async (req, res) => {
     if (chainId == "" || chainId == undefined || srcTxHash == "" || srcTxHash ==undefined){
         res.status(400).json({ message: "Invalid Parameter" });
     }
-    const { messages } = await client.getMessagesBySrcTxHash(chainId,srcTxHash);
+    console.log("srcTxHash", srcTxHash)
+    const { messages } = await getMessagesBySrcTxHash(chainId,srcTxHash);
 
     res.json({ messages });
     return
