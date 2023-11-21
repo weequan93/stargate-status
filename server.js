@@ -18,7 +18,11 @@ app.get('/api/v1/fromSource',  async (req, res) => {
     console.log("srcTxHash", srcTxHash)
     const { messages } = await getMessagesBySrcTxHash(chainId,srcTxHash);
 
-    res.json({ messages });
+    if (messages.length > 0) {
+        res.json(messages[0]);
+        return
+    }
+    res.json({ });
     return
 })
 
