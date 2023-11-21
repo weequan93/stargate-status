@@ -3,7 +3,7 @@ const { createClient } = require('@layerzerolabs/scan-client')
 
 const express = require('express')
 const app = express()
-const port = process.env.port
+const port = process.env.port || 3000
 
 app.use(express.json());
 
